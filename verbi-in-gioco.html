@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#f8f6f0" />
+<meta name="color-scheme" content="light" />
+<meta name="description" content="Interaktiver Italienisch-Verbenwürfel: 20 Verben im Präsens üben, auf iPad und im Browser." />
+<title>Verbi in gioco · Italienisch-Verbenwürfel</title>
+<style>
+:root{--ink:#203b3b;--muted:#627270;--paper:#f8f6f0;--cream:#fffdf8;--teal:#157468;--teal-dark:#11574f;--rust:#c67555;--line:#e5e8de;--shadow:0 22px 70px rgba(29,62,54,.10)}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh}body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 85% 0%,#d4e9df90,transparent 34%),radial-gradient(circle at 2% 100%,#f2dfcb90,transparent 37%)}.page{position:relative;max-width:1250px;margin:0 auto;padding:31px 30px 24px}.top{display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid #d9ded5;padding-bottom:24px}.brand{display:flex;align-items:center;gap:14px}.mark{width:48px;height:48px;display:grid;place-items:center;border:2px solid var(--teal);border-radius:14px;transform:rotate(-7deg);color:var(--teal);font-family:Georgia,serif;font-weight:bold;font-size:25px}.mark span{transform:rotate(7deg)}.eyebrow{color:var(--teal);font-size:12px;font-weight:800;letter-spacing:.19em;text-transform:uppercase}.brand h1{font-family:Georgia,'Times New Roman',serif;font-size:32px;font-weight:500;letter-spacing:-.035em;margin:3px 0 0}.tag{color:var(--muted);font-size:13px;border:1px solid #d5ddd5;border-radius:100px;padding:10px 15px;white-space:nowrap}.heading{text-align:center;margin:31px auto 25px}.heading .mini{font-size:12px;text-transform:uppercase;letter-spacing:.2em;color:var(--rust);font-weight:800}.heading h2{font:normal clamp(24px,3vw,38px)/1.2 Georgia,serif;margin:9px 0;color:var(--ink)}.heading p{margin:6px;color:var(--muted);font-size:16px}.stage{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}.card{min-height:380px;background:var(--cream);border-radius:23px;border:1px solid var(--line);box-shadow:var(--shadow);position:relative;overflow:hidden}.label{display:flex;align-items:center;gap:9px;padding:25px 29px 0;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}.num{font-family:Georgia,serif;font-size:18px;color:var(--teal);letter-spacing:0}.pronoun-content{min-height:274px;display:flex;flex-direction:column;align-items:center;justify-content:center}.pronoun{font:normal clamp(70px,10vw,133px)/1 Georgia,'Times New Roman',serif;letter-spacing:-.065em;color:var(--teal);text-align:center;margin:5px 12px}.pronoun.long{font-size:clamp(37px,5.1vw,68px);letter-spacing:-.05em}.subtext{text-align:center;font-size:14px;color:var(--muted);margin-top:25px}.pips{position:absolute;display:flex;gap:8px;bottom:24px;left:50%;transform:translateX(-50%)}.pip{width:7px;height:7px;border-radius:50%;background:#cdd9d2}.pip.active{background:var(--teal);box-shadow:0 0 0 4px #e3f0e7}.verb-inner{display:grid;grid-template-columns:52% 48%;height:calc(100% - 56px);min-height:312px}.verb-text{padding:43px 0 26px 29px;display:flex;flex-direction:column;justify-content:center;min-width:0}.verb{font:normal clamp(38px,5vw,66px)/1.07 Georgia,serif;letter-spacing:-.055em;overflow-wrap:anywhere}.meaning{color:var(--muted);font-size:18px;margin-top:17px}.art{margin:15px 18px 19px 0;border-radius:20px;display:grid;place-items:center;background:linear-gradient(135deg,#e6efe6,#f4e7d9);position:relative;overflow:hidden}.art:before{content:"";width:230px;height:230px;position:absolute;border:1.5px solid #ffffff9a;border-radius:50%;transform:translate(13px,12px)}.art:after{content:"";width:155px;height:155px;position:absolute;border:1px dashed #ffffffa0;border-radius:50%;transform:translate(13px,12px)}.emoji{position:relative;z-index:1;font-size:clamp(78px,10vw,132px);line-height:1;filter:drop-shadow(0 13px 6px #133a3213);text-align:center;user-select:none}.emoji.small{font-size:clamp(62px,8vw,103px)}.controls{display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap;margin-top:29px}.btn{border:0;border-radius:15px;padding:18px 28px;font:750 16px/1 ui-sans-serif,system-ui,sans-serif;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s;display:inline-flex;align-items:center;justify-content:center;gap:12px}.btn:active{transform:translateY(2px)}.primary{background:var(--teal);color:#fff;box-shadow:0 10px 22px #15746836;min-width:270px}.primary:hover{background:var(--teal-dark)}.secondary{background:#fff;color:var(--ink);border:1px solid #d7ded6}.secondary:hover{background:#eef3ee}.shortcut{font-size:12px;color:var(--muted);text-align:center;margin:11px 0 0}.answer{max-width:710px;margin:23px auto 0;padding:19px 26px;background:#e6f1e9;border:1px solid #c6ddce;border-radius:17px;display:flex;align-items:center;justify-content:space-between;gap:15px}.answer[hidden]{display:none}.answer-kicker{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:800;margin-bottom:5px}.answer-verb{font:normal 31px Georgia,serif;color:var(--teal-dark)}.answer-note{font-size:12px;color:#577769}.footer{margin-top:35px;padding-top:18px;border-top:1px solid #d9ded5;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12px;color:var(--muted)}.dot{width:7px;height:7px;background:var(--rust);border-radius:50%;display:inline-block;margin-right:7px}.shaking .pronoun,.shaking .verb,.shaking .emoji{animation:pop .45s ease}@keyframes pop{0%{transform:translateY(9px) scale(.96);opacity:.55}65%{transform:translateY(-5px) scale(1.04);opacity:1}100%{transform:none}}button:focus-visible{outline:3px solid var(--rust);outline-offset:4px}@media(max-width:820px){.stage{grid-template-columns:1fr}.card{min-height:290px}.pronoun-content{min-height:220px}.verb-inner{min-height:245px}.heading{margin:25px auto}.tag{display:none}}@media(max-width:480px){.page{padding:20px 14px}.brand h1{font-size:25px}.mark{width:42px;height:42px}.card{border-radius:18px}.label{padding:20px 20px 0}.verb-text{padding-left:20px}.verb{font-size:39px}.meaning{font-size:15px}.art{margin-right:10px}.emoji{font-size:78px}.btn{width:100%}.footer{flex-wrap:wrap;line-height:1.5}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+/* iPad / Safari: sichere Ränder, Touch-Ziele und Querformat */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{-webkit-tap-highlight-color:transparent}
+.page{padding-left:max(30px,env(safe-area-inset-left));padding-right:max(30px,env(safe-area-inset-right));padding-bottom:max(24px,env(safe-area-inset-bottom))}
+button{font-family:inherit;touch-action:manipulation;-webkit-appearance:none;appearance:none;min-height:56px}
+button:focus{outline:3px solid var(--rust);outline-offset:4px}
+@supports selector(:focus-visible){button:focus:not(:focus-visible){outline:none}}
+@media(hover:none){.primary:hover{background:var(--teal)}.secondary:hover{background:#fff}}
+@media(max-width:820px){.page{padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right))}}
+@media(max-width:480px){.page{padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,env(safe-area-inset-right))}.art:before{width:160px;height:160px}.art:after{width:105px;height:105px}}
+@media(min-width:821px) and (max-height:650px){.heading{margin:16px auto}.card{min-height:315px}.pronoun-content{min-height:220px}.verb-inner{min-height:255px}.controls{margin-top:18px}}
+</style>
+</head>
+<body><main class="page">
+<header class="top"><div class="brand"><div class="mark" aria-hidden="true"><span>V.</span></div><div><div class="eyebrow">Italiano · Presente</div><h1>Verbi in gioco</h1></div></div><div class="tag">20 verbi · 6 pronomi · 120 combinazioni</div></header>
+<section class="heading" aria-labelledby="task"><div class="mini">La sfida</div><h2 id="task" lang="it">Coniuga il verbo al presente.</h2><p lang="it">Guarda il pronome e il verbo. Di’ la forma corretta!</p></section>
+<section class="stage" aria-label="Zwei Zufallswürfel">
+<div class="card" id="pronounCard"><div class="label"><span class="num">01</span> Il pronome</div><div class="pronoun-content"><div class="pronoun" id="pronoun" lang="it" aria-live="polite">io</div><div class="subtext">Chi fa l’azione?</div></div><div class="pips" id="pips" aria-hidden="true"></div></div>
+<div class="card" id="verbCard"><div class="label"><span class="num">02</span> Il verbo</div><div class="verb-inner"><div class="verb-text"><div class="verb" id="verb" lang="it" aria-live="polite">parlare</div><div class="meaning" id="meaning">sprechen</div></div><div class="art" id="art" role="img" aria-label="Illustration: sprechen"><span class="emoji" id="emoji" aria-hidden="true">🗣️</span></div></div></div>
+</section>
+<div class="controls"><button class="btn primary" id="roll" type="button"><span aria-hidden="true">⚄</span> Lancia i dadi <span aria-hidden="true">↗</span></button><button class="btn secondary" id="reveal" type="button" aria-expanded="false" aria-controls="answer">◉ Mostra la soluzione</button></div>
+<div class="shortcut">Tippen: neu würfeln · Lösung ist standardmäßig verborgen · Leertaste am Computer</div>
+<div class="answer" id="answer" hidden aria-live="polite"><div><div class="answer-kicker">La soluzione · Presente indicativo</div><div class="answer-verb" id="answerText">io parlo</div></div><div class="answer-note">Controlla la risposta ✓</div></div>
+<footer class="footer"><div><span class="dot"></span>Un verbo, un pronome, una risposta.</div><div>Für den Unterricht · ohne externe Ressourcen</div></footer>
+</main>
+<script>
+'use strict';
+// Jeweils Formen in der Reihenfolge io, tu, lui/lei/Lei, noi, voi, loro.
+const verbs = [
+ ['parlare','sprechen','🗣️',['parlo','parli','parla','parliamo','parlate','parlano']],
+ ['arrivare','ankommen','🚉',['arrivo','arrivi','arriva','arriviamo','arrivate','arrivano']],
+ ['lavorare','arbeiten','👩‍💻',['lavoro','lavori','lavora','lavoriamo','lavorate','lavorano']],
+ ['pensare','denken','🤔',['penso','pensi','pensa','pensiamo','pensate','pensano']],
+ ['guardare','schauen / beobachten','👀',['guardo','guardi','guarda','guardiamo','guardate','guardano']],
+ ['tornare','zurückkehren','🏠',['torno','torni','torna','torniamo','tornate','tornano']],
+ ['aspettare','warten','⌛',['aspetto','aspetti','aspetta','aspettiamo','aspettate','aspettano']],
+ ['cominciare','anfangen / beginnen','🚀',['comincio','cominci','comincia','cominciamo','cominciate','cominciano']],
+ ['abitare','wohnen','🏡',['abito','abiti','abita','abitiamo','abitate','abitano']],
+ ['ricordare','sich erinnern','💭',['ricordo','ricordi','ricorda','ricordiamo','ricordate','ricordano']],
+ ['camminare','gehen / wandern','🚶',['cammino','cammini','cammina','camminiamo','camminate','camminano']],
+ ['cucinare','kochen','👩‍🍳',['cucino','cucini','cucina','cuciniamo','cucinate','cucinano']],
+ ['mandare','schicken','✉️',['mando','mandi','manda','mandiamo','mandate','mandano']],
+ ['nuotare','schwimmen','🏊',['nuoto','nuoti','nuota','nuotiamo','nuotate','nuotano']],
+ ['domandare','fragen','❓',['domando','domandi','domanda','domandiamo','domandate','domandano']],
+ ['portare','tragen / bringen','🧳',['porto','porti','porta','portiamo','portate','portano']],
+ ['imparare','lernen','📚',['imparo','impari','impara','impariamo','imparate','imparano']],
+ ['amare','lieben','❤️',['amo','ami','ama','amiamo','amate','amano']],
+ ['chiamare','rufen / anrufen','📞',['chiamo','chiami','chiama','chiamiamo','chiamate','chiamano']],
+ ['giocare','spielen','⚽',['gioco','giochi','gioca','giochiamo','giocate','giocano']]
+];
+const pronouns=['io','tu','lui / lei / Lei','noi','voi','loro'];
+const $=id=>document.getElementById(id);
+let currentPronoun=0,currentVerb=0;
+const randomIndex=n=>{if(window.crypto && window.crypto.getRandomValues){const a=new Uint32Array(1);crypto.getRandomValues(a);return a[0]%n}return Math.floor(Math.random()*n)};
+function update(){const p=pronouns[currentPronoun],v=verbs[currentVerb];$('pronoun').textContent=p;$('pronoun').classList.toggle('long',currentPronoun===2);$('verb').textContent=v[0];$('meaning').textContent=v[1];$('emoji').textContent=v[2];$('emoji').classList.toggle('small',v[2].length>2);$('art').setAttribute('aria-label','Illustration: '+v[1]);$('answerText').textContent=p+' '+v[3][currentPronoun];$('pips').innerHTML=pronouns.map((_,i)=>'<span class="pip'+(i===currentPronoun?' active':'')+'"></span>').join('');}
+function hideAnswer(){$('answer').hidden=true;$('reveal').textContent='◉ Mostra la soluzione';$('reveal').setAttribute('aria-expanded','false')}
+function roll(){let p,v;do{p=randomIndex(6);v=randomIndex(verbs.length)}while(p===currentPronoun&&v===currentVerb);currentPronoun=p;currentVerb=v;hideAnswer();update();for(const id of ['pronounCard','verbCard']){$(id).classList.remove('shaking');void $(id).offsetWidth;$(id).classList.add('shaking')}}
+$('roll').addEventListener('click',roll);
+$('reveal').addEventListener('click',()=>{const willShow=$('answer').hidden;$('answer').hidden=!willShow;$('reveal').textContent=willShow?'◉ Nascondi la soluzione':'◉ Mostra la soluzione';$('reveal').setAttribute('aria-expanded',String(willShow))});
+document.addEventListener('keydown',e=>{if(e.code==='Space'&&!e.repeat&&!['BUTTON','INPUT','TEXTAREA'].includes(document.activeElement.tagName)){e.preventDefault();roll()}});
+update();
+</script></body></html>
